@@ -21,6 +21,8 @@
 
     // Loops
     for($i=0;$i<count($users);$i++){
+        $lat = $users[$i]['address']['geo']['lat'];
+        $lng = $users[$i]['address']['geo']['lng'];
         echo "<h3>User id: {$users[$i]['id']}</h3>";
         echo "<h4>Name: {$users[$i]['name']} </h4>";
         echo "<h4>Username: {$users[$i]['username']} </h4>";
@@ -30,6 +32,7 @@
         echo "<h4>Street: {$users[$i]['address']['street']}</h4>";
         echo "<h4>City: {$users[$i]['address']['city']}</h4>";
         echo "<h4>Zip Code: {$users[$i]['address']['zipcode']}</h4>";
+        echo "<iframe src='https://www.google.com/maps?q=" . urlencode($lat . ',' . $lng) . "&hl=es;z=14&output=embed' allowfullscreen></iframe><br>";
         echo "<hr/>";
     }
     ?>
