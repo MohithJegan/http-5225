@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+    <title>Excercise 1</title>
 </head>
 <body>
     <h1>Code Challenge 1</h1>
