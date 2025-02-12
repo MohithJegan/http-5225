@@ -24,7 +24,7 @@
      $query = "SELECT * FROM colors";
      $colors = mysqli_query($connection, $query);
      
-     // Loop to display the recoed from DB
+     // Loop to display the record from DB
      while($row = mysqli_fetch_assoc($colors)) { 
        
         echo "<div class='fw-bold text-center text-white p-5 shadow-lg border border-light' style='background-color:{$row["Hex"]};'>{$row["Name"]}</div>";
