@@ -1,3 +1,27 @@
+<?php
+if(isset($_POST['addSchool'])){
+  //print_r($_POST);
+  // Array ( [boardname] => Mohith [language] => EN [schooltype] => Private [addSchool] => )
+
+  $boardname = $_POST['boardname'];
+  $language = $_POST['language'];
+  $schooltype = $_POST['schooltype'];
+
+  include('reusables/connection.php');
+  $query = "INSERT INTO schools (`Board`,`Language`,`School Type`)
+  VALUES('$boardname', '$language', '$schooltype')";
+
+  $school = mysqli_query($connect, $query);
+  if($school){
+    echo 'School added successfully.';
+  }
+  else{
+    echo 'Unable to add the school, Error code: '. mysqli_error();
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +42,7 @@
     </div>
     <div class="row">
       <div class="col-md-6">
-      <form metohd="POST" action="addschool.php">
+      <form method="POST" action="addschool.php">
         <div class="mb-3">
           <label for="boardname" class="form-label">Board Name</label>
           <input type="text" class="form-control" name="boardname" id="boardname" aria-describedby="boardname">
@@ -34,7 +58,7 @@
           <input type="text" class="form-control" name="schooltype" id="schooltype" aria-describedby="schooltype">
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" name="addSchool">Submit</button>
       </form>
       </div>
     </div>
