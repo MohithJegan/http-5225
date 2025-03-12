@@ -32,7 +32,7 @@
                       <span class="badge bg-primary">' . $school['School Type'] .'</span>
                       <span class="badge bg-success">' . $school['Language'] .'</span>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer d-flex">
                       <form action="updateschool.php" method="GET">
                       <input type="hidden" name="boardNo" value="' . $school['Board No'] . '">
                       <button type="submit" name="updateSchool" class="btn-sm btn-success">Edit</button>
