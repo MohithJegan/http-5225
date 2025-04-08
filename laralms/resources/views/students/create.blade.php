@@ -14,4 +14,11 @@
         <input type="submit" value="Create">
     </form>
 
+    <select name="" id="">
+        @foreach ($courses as $course)
+            <option>{{ $course -> name }}</option>
+        @endforeach
+    </select>
+  
+
 @endsection
